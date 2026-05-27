@@ -11,7 +11,6 @@ export default function Navbar() {
     { href: "/first", label: "FIRST & FTC" },
     { href: "/story", label: "Story" },
     { href: "/members", label: "Members" },
-    { href: "/alumni", label: "Alumni" },
     { href: "/robots", label: "Robots" },
     { href: "/notes", label: "Notes" },
     { href: "/resources", label: "Resources" },
