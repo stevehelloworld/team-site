@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@source "../";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* ── Brand Colors ── */
+  --color-team-bg: #0d1117;
+  --color-team-card: #161b22;
+  --color-team-card-hover: #232d42;
+  --color-team-accent: #ff6b35;
+  --color-team-accent-dark: #cc5529;
+  --color-team-accent-light: #ff8c5a;
+  --color-team-gold: #ffa500;
+  --color-team-mars: #e04040;
+  --color-team-border: rgba(255, 255, 255, 0.06);
+  --color-team-border-accent: rgba(255, 107, 53, 0.3);
+  --color-team-glow: rgba(255, 107, 53, 0.15);
+  --color-team-glow-strong: rgba(255, 107, 53, 0.3);
+
+  /* ── Font Families ── */
+  --font-heading: var(--font-orbitron), sans-serif;
+  --font-body: var(--font-roboto), sans-serif;
+}
+
+/* ── Base styles (inside @layer base so Tailwind utilities always win) ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--color-team-bg);
+    color: #e6edf3;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: var(--color-team-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--color-team-accent-light);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* ── Animations ── */
+@keyframes twinkle {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+@keyframes marsFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes marsGlow {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.7s ease-out both;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out both;
+  }
+}
+
+/* ── Prose overrides for dark theme ── */
+@layer components {
+  .prose {
+    --tw-prose-body: #8b949e;
+    --tw-prose-headings: #e6edf3;
+    --tw-prose-links: #ff6b35;
+    --tw-prose-bold: #e6edf3;
+    --tw-prose-bullets: #484f58;
+    --tw-prose-quotes: #8b949e;
+    --tw-prose-quote-borders: #ff6b35;
+    --tw-prose-code: #ff6b35;
+    --tw-prose-pre-code: #e6edf3;
+    --tw-prose-pre-bg: rgba(255, 255, 255, 0.03);
+  }
+}
+
+/* ── Scrollbar (unlayered is fine — doesn't conflict with utilities) ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a40;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff6b35;
+}

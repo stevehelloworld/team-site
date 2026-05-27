@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Mars Rover v1",
+        "season": "2024-2025 INTO THE DEEP",
+        "specs": {
+            "Drive": "Mecanum Drive",
+            "Weight": "~19 kg",
+            "Controller": "REV Control Hub",
+            "Motors": "4x GoBILDA 5203"
+        },
+        "features": [
+            "Auto Sampling",
+            "Specimen Scoring",
+            "Hang"
+        ],
+        "photo": "",
+        "description": "VIS Mars 的第一台 FTC 競賽機器人。為 INTO THE DEEP 賽季設計，具備自動取樣、標本放置和攀掛功能。經過多次迭代改進，在香港和台灣區域賽中表現出色。"
+    },
+    {
+        "name": "Prototype Bot",
+        "season": "2024 Pre-Season",
+        "specs": {
+            "Drive": "Tank Drive",
+            "Weight": "~12 kg",
+            "Purpose": "Practice & Learning"
+        },
+        "features": [
+            "Drive Practice",
+            "Mechanism Testing"
+        ],
+        "photo": "",
+        "description": "團隊的第一台練習機器人，用於學習基本的機器人控制和簡單機構測試。這台機器人幫助團隊成員熟悉 FTC 系統和程式開發流程。"
+    }
+]
