@@ -48,9 +48,13 @@ const videos: VideoItem[] = [
   },
 ];
 
-export default function MediaPage() {
+export default function MediaClient() {
   const [activeVideo, setActiveVideo] = useState<VideoItem | null>(null);
   const { t } = useLanguage();
+
+  useEffect(() => {
+    document.title = `${t("navbar", "media")} | VIS Mars #32760`;
+  }, [t]);
 
   // Lock body scroll when modal is open
   useEffect(() => {

@@ -1,34 +1,49 @@
 "use client";
 
+import { useEffect } from "react";
 import Calendar from "@/components/Calendar";
 import eventsData from "@/data/events.json";
 import { useLanguage } from "@/context/LanguageContext";
 
 const upcomingEvents = [
   { 
-    date: "MAR 05", 
+    date: "JUN 03", 
     title: { en: "Team Meeting", zh: "團隊會議" }, 
     desc: { en: "Weekly team meeting", zh: "每週例行團隊會議" } 
   },
   { 
-    date: "MAR 12", 
+    date: "JUN 10", 
     title: { en: "Practice Session", zh: "練習賽與操控練習" }, 
     desc: { en: "Driver practice and mechanism testing", zh: "操作手練習與機構測試" } 
   },
   { 
-    date: "MAR 19", 
+    date: "JUN 17", 
     title: { en: "Build Session", zh: "硬體建造調整" }, 
     desc: { en: "Robot improvements and bug fixes", zh: "機器人細部改進與除錯" } 
   },
   { 
-    date: "MAR 26", 
+    date: "JUN 24", 
     title: { en: "Season Review", zh: "賽季成果回顧" }, 
     desc: { en: "End-of-season review and planning", zh: "季後總檢討與下一階段規劃" } 
   },
+  { 
+    date: "JUL 01", 
+    title: { en: "Summer Workshop", zh: "暑期機器人工作坊" }, 
+    desc: { en: "Introduction to robotics for new members", zh: "針對新隊員的機器人與控制入門工作坊" } 
+  },
+  { 
+    date: "JUL 08", 
+    title: { en: "Kickoff Prep", zh: "新賽季啟動籌備" }, 
+    desc: { en: "Analyzing rules and setup for upcoming season", zh: "分析新賽季規則與硬體場地搭建準備" } 
+  },
 ];
 
-export default function CalendarPage() {
+export default function CalendarClient() {
   const { t, language } = useLanguage();
+
+  useEffect(() => {
+    document.title = `${t("navbar", "calendar")} | VIS Mars #32760`;
+  }, [t]);
 
   const statusCards = [
     { 

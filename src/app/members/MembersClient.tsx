@@ -1,11 +1,16 @@
 "use client";
 
+import { useEffect } from "react";
 import MemberCard from "@/components/MemberCard";
 import membersData from "@/data/members.json";
 import { useLanguage } from "@/context/LanguageContext";
 
-export default function MembersPage() {
+export default function MembersClient() {
   const { t, language } = useLanguage();
+
+  useEffect(() => {
+    document.title = `${t("navbar", "members")} | VIS Mars #32760`;
+  }, [t]);
 
   return (
     <main className="pt-[72px] w-full">

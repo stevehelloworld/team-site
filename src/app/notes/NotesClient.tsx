@@ -1,11 +1,16 @@
 "use client";
 
+import { useEffect } from "react";
 import NoteTabs from "@/components/NoteTabs";
 import notesData from "@/data/notes.json";
 import { useLanguage } from "@/context/LanguageContext";
 
-export default function NotesPage() {
+export default function NotesClient() {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    document.title = `${t("navbar", "notes")} | VIS Mars #32760`;
+  }, [t]);
 
   return (
     <main className="pt-[72px] w-full">

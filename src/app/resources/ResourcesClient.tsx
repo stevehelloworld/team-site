@@ -1,9 +1,14 @@
 "use client";
 
+import { useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
-export default function ResourcesPage() {
+export default function ResourcesClient() {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    document.title = `${t("navbar", "resources")} | VIS Mars #32760`;
+  }, [t]);
 
   return (
     <main className="pt-[72px] w-full">

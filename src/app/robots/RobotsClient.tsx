@@ -1,11 +1,16 @@
 "use client";
 
+import { useEffect } from "react";
 import RobotTabs from "@/components/RobotTabs";
 import robotsData from "@/data/robots.json";
 import { useLanguage } from "@/context/LanguageContext";
 
-export default function RobotsPage() {
+export default function RobotsClient() {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    document.title = `${t("navbar", "robots")} | VIS Mars #32760`;
+  }, [t]);
 
   return (
     <main className="pt-[72px] w-full">

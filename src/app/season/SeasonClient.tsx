@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import TimelineItem from "@/components/TimelineItem";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -81,8 +82,12 @@ const ftcInfoData = [
   },
 ];
 
-export default function SeasonPage() {
+export default function SeasonClient() {
   const { language, t } = useLanguage();
+
+  useEffect(() => {
+    document.title = `${t("navbar", "season")} | VIS Mars #32760`;
+  }, [t]);
 
   const results = [
     { 

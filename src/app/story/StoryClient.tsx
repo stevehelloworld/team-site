@@ -83,9 +83,13 @@ const values = [
   { icon: "IV", titleKey: "val4Title", descKey: "val4Desc" },
 ];
 
-export default function StoryPage() {
+export default function StoryClient() {
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
   const { language, t } = useLanguage();
+
+  useEffect(() => {
+    document.title = `${t("navbar", "story")} | VIS Mars #32760`;
+  }, [t]);
 
   // Lock body scroll when modal is open
   useEffect(() => {
