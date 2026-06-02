@@ -3,6 +3,7 @@ import { Orbitron, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -36,11 +37,13 @@ export default function RootLayout({
       className={`${orbitron.variable} ${roboto.variable} h-full antialiased`}
     >
       <body className="bg-[#0d1117] text-gray-100 min-h-screen flex flex-col items-stretch">
-        <Navbar />
-        <div className="flex-1 w-full">
-          {children}
-        </div>
-        <Footer />
+        <LanguageProvider>
+          <Navbar />
+          <div className="flex-1 w-full">
+            {children}
+          </div>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -1,53 +1,56 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/context/LanguageContext";
+import Image from "next/image";
 
 type VideoItem = {
   id: string;
-  title: string;
-  subtitle: string;
-  description: string;
+  titleKey: string;
+  subtitleKey: string;
+  descriptionKey: string;
   date: string;
-  duration: string;
-  category: string;
-  thumbnailGradient: string;
+  categoryKey: string;
+  durationKey: string;
+  image: string;
 };
 
 const videos: VideoItem[] = [
   {
     id: "1NwPk3ZJuIAYZL3AX91N6Oe4zU2dfZvtC",
-    title: "賽季紀錄片《TO CARRY IT ALL》",
-    subtitle: "承載一切 • 隊伍年度紀錄片首部曲",
-    description: "VIS Mars 32760 戰隊的年度真實紀錄片。不僅展現競賽中精密的機構設計與榮譽，更深刻揭露了團隊在面對技術故障（Bug）與賽場壓力時，如何從個人英雄主義走向合作系統共榮的蛻變歷程。",
+    titleKey: "ep1Title",
+    subtitleKey: "ep1Sub",
+    descriptionKey: "ep1Desc",
+    categoryKey: "ep1Category",
+    durationKey: "ep1Duration",
     date: "2026.03",
-    duration: "年度精華",
-    category: "Season Documentary",
-    thumbnailGradient: "linear-gradient(135deg, #1a0e08 0%, #2a1a10 50%, #4a2310 100%)",
+    image: "/images/media_thumb_ep1.png",
   },
   {
     id: "11EQmMm17pUNste46r_hwZwhQ9paujczE",
-    title: "台灣選拔賽紀錄片",
-    subtitle: "Chinese Taipei Championship",
-    description: "記錄了 VIS Mars 在 2026 年 2 月台灣選拔賽（高雄科工館）的奮鬥軌跡。展示團隊在賽道調試、自動控制程式編寫，以及激烈的聯盟淘汰賽中一路披荊斬棘，最終奪下 Finalist Alliance（決賽聯盟）的榮耀時刻。",
+    titleKey: "ep2Title",
+    subtitleKey: "ep2Sub",
+    descriptionKey: "ep2Desc",
+    categoryKey: "ep2Category",
+    durationKey: "ep2Duration",
     date: "2026.02",
-    duration: "賽事紀錄",
-    category: "Championship",
-    thumbnailGradient: "linear-gradient(135deg, #0f1626 0%, #1c2333 50%, #ff6b35/20 100%)",
+    image: "/images/media_thumb_ep2.png",
   },
   {
     id: "1PmHvE1_bU9qKwNLn7h8HZEGlxJOkJGCA",
-    title: "香港錦標賽紀錄片",
-    subtitle: "China - Hong Kong Championship",
-    description: "記錄了團隊於 2026 年 2 月底遠征香港的珍貴影像。記錄我們在國際賽場上面對更強勁對手時，如何進行高強度的機構迭代與戰術修正，最終成功奪得 Finalist Alliance 及 Inspire Award 二等獎雙重肯定。",
+    titleKey: "ep3Title",
+    subtitleKey: "ep3Sub",
+    descriptionKey: "ep3Desc",
+    categoryKey: "ep3Category",
+    durationKey: "ep3Duration",
     date: "2026.03",
-    duration: "海外遠征",
-    category: "Championship",
-    thumbnailGradient: "linear-gradient(135deg, #0d1b1e 0%, #162a2c 50%, #ff6b35/10 100%)",
+    image: "/images/media_thumb_ep3.png",
   },
 ];
 
 export default function MediaPage() {
   const [activeVideo, setActiveVideo] = useState<VideoItem | null>(null);
+  const { t } = useLanguage();
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -73,16 +76,16 @@ export default function MediaPage() {
           className="inline-block text-[0.8rem] font-bold text-[#ff6b35] bg-[rgba(255,107,53,0.15)] px-5 py-2 rounded border border-[rgba(255,107,53,0.3)] tracking-[3px] uppercase mb-4"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          Visual Log & Videos
+          {t("media", "badge")}
         </span>
         <h1
           className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-wide"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          影音紀錄與賽事影片
+          {t("media", "title")}
         </h1>
         <p className="text-gray-400 font-light text-lg max-w-2xl mx-auto leading-relaxed">
-          透過真實的鏡頭紀錄，見證 VIS Mars #32760 隊伍在賽場內外的汗水、重啟與光榮時刻。
+          {t("media", "subTitle")}
         </p>
       </div>
 
@@ -96,26 +99,32 @@ export default function MediaPage() {
               onClick={() => setActiveVideo(video)}
             >
               {/* Thumbnail Container */}
-              <div
-                className="w-full aspect-video relative flex items-center justify-center overflow-hidden"
-                style={{ background: video.thumbnailGradient }}
-              >
+              <div className="w-full aspect-video relative flex items-center justify-center overflow-hidden bg-black">
                 {/* Tech grid overlay */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:20px_20px] opacity-40 pointer-events-none" />
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:20px_20px] opacity-40 pointer-events-none z-10" />
                 
+                {/* Custom Image Thumbnail */}
+                <Image
+                  src={video.image}
+                  alt={t("media", video.titleKey)}
+                  fill
+                  sizes="(max-w-768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+
                 {/* Visual Glow */}
-                <div className="absolute w-32 h-32 rounded-full bg-[#ff6b35]/10 filter blur-xl group-hover:scale-150 transition-transform duration-700 pointer-events-none" />
+                <div className="absolute w-32 h-32 rounded-full bg-[#ff6b35]/15 filter blur-xl group-hover:scale-150 transition-transform duration-700 pointer-events-none z-10" />
 
                 {/* Categories Badge */}
                 <span
-                  className="absolute top-4 left-4 bg-[#0d1117]/80 text-[#ff6b35] text-[0.65rem] font-bold px-3 py-1 rounded border border-[#ff6b35]/20 uppercase tracking-[1px] font-mono z-10"
+                  className="absolute top-4 left-4 bg-[#0d1117]/90 text-[#ff6b35] text-[0.65rem] font-bold px-3 py-1 rounded border border-[#ff6b35]/20 uppercase tracking-[1px] font-mono z-20"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
-                  {video.category}
+                  {t("media", video.categoryKey)}
                 </span>
 
                 {/* Play Button Icon */}
-                <div className="w-16 h-16 rounded-full bg-[#0d1117]/90 border border-white/10 flex items-center justify-center text-[#ff6b35] group-hover:bg-[#ff6b35] group-hover:text-[#0d1117] group-hover:scale-110 transition-all duration-500 shadow-[0_0_15px_rgba(0,0,0,0.5)] group-hover:shadow-[0_0_25px_rgba(255,107,53,0.4)] z-10 relative">
+                <div className="w-16 h-16 rounded-full bg-[#0d1117]/90 border border-white/10 flex items-center justify-center text-[#ff6b35] group-hover:bg-[#ff6b35] group-hover:text-[#0d1117] group-hover:scale-110 transition-all duration-500 shadow-[0_0_15px_rgba(0,0,0,0.5)] group-hover:shadow-[0_0_25px_rgba(255,107,53,0.4)] z-20 relative">
                   <svg
                     width="20"
                     height="20"
@@ -129,7 +138,7 @@ export default function MediaPage() {
                 </div>
 
                 {/* Subtle dark overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 opacity-80 group-hover:opacity-40 transition-opacity duration-500 z-10" />
               </div>
 
               {/* Card Details */}
@@ -137,7 +146,7 @@ export default function MediaPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-[#ff6b35] text-xs font-mono font-bold tracking-[1px]">
-                      {video.duration}
+                      {t("media", video.durationKey)}
                     </span>
                     <span className="text-gray-500 text-xs font-mono font-bold">{video.date}</span>
                   </div>
@@ -145,17 +154,17 @@ export default function MediaPage() {
                     className="text-lg font-bold text-white mb-1 group-hover:text-[#ff6b35] transition-colors duration-300"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
-                    {video.title}
+                    {t("media", video.titleKey)}
                   </h3>
-                  <p className="text-gray-400 text-xs font-medium mb-4">{video.subtitle}</p>
+                  <p className="text-gray-400 text-xs font-medium mb-4">{t("media", video.subtitleKey)}</p>
                   <p className="text-gray-400 text-sm font-light leading-relaxed">
-                    {video.description}
+                    {t("media", video.descriptionKey)}
                   </p>
                 </div>
 
                 {/* Bottom Trigger */}
                 <div className="mt-6 pt-4 border-t border-white/[0.04] flex items-center justify-between text-white font-bold text-xs uppercase tracking-[1px] group-hover:text-[#ff6b35] transition-colors duration-300">
-                  <span>立即觀看紀錄片</span>
+                  <span>{t("media", "playNow")}</span>
                   <span>→</span>
                 </div>
               </div>
@@ -178,9 +187,9 @@ export default function MediaPage() {
             <div className="flex justify-between items-center mb-4 text-white">
               <div>
                 <span className="text-[#ff6b35] text-xs font-mono tracking-[2px] uppercase">
-                  {activeVideo.category}
+                  {t("media", activeVideo.categoryKey)}
                 </span>
-                <h3 className="text-xl font-bold font-heading">{activeVideo.title}</h3>
+                <h3 className="text-xl font-bold font-heading">{t("media", activeVideo.titleKey)}</h3>
               </div>
               
               {/* Close Button */}
@@ -217,7 +226,7 @@ export default function MediaPage() {
 
             {/* Hint below video */}
             <p className="text-center text-gray-500 text-xs mt-4">
-              提示：若無法播放影片，請確保您的 Google 帳戶已登入，或檢查瀏覽器隱私設定。
+              {t("media", "hint")}
             </p>
           </div>
         </div>
