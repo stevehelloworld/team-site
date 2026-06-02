@@ -17,17 +17,17 @@ type VideoItem = {
 
 const videos: VideoItem[] = [
   {
-    id: "1NwPk3ZJuIAYZL3AX91N6Oe4zU2dfZvtC",
+    id: "11EQmMm17pUNste46r_hwZwhQ9paujczE",
     titleKey: "ep1Title",
     subtitleKey: "ep1Sub",
     descriptionKey: "ep1Desc",
     categoryKey: "ep1Category",
     durationKey: "ep1Duration",
-    date: "2026.03",
+    date: "2026.02",
     image: "/images/media_thumb_ep1.png",
   },
   {
-    id: "11EQmMm17pUNste46r_hwZwhQ9paujczE",
+    id: "1PmHvE1_bU9qKwNLn7h8HZEGlxJOkJGCA",
     titleKey: "ep2Title",
     subtitleKey: "ep2Sub",
     descriptionKey: "ep2Desc",
@@ -37,7 +37,7 @@ const videos: VideoItem[] = [
     image: "/images/media_thumb_ep2.png",
   },
   {
-    id: "1PmHvE1_bU9qKwNLn7h8HZEGlxJOkJGCA",
+    id: "1NwPk3ZJuIAYZL3AX91N6Oe4zU2dfZvtC",
     titleKey: "ep3Title",
     subtitleKey: "ep3Sub",
     descriptionKey: "ep3Desc",

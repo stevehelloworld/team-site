@@ -36,7 +36,8 @@ const timelineData = [
     description: {
       en: "Months of intense prototyping, building, and programming. We went through multiple design iterations, testing various mechanisms for scoring and pixel alignment.",
       zh: "歷經數月的高強度原型設計、實體建造與程式撰寫。我們進行了多次設計迭代，測試各類取樣、像素排列與懸掛攀爬機構。"
-    }
+    },
+    videoId: "11EQmMm17pUNste46r_hwZwhQ9paujczE"
   },
   { 
     date: "2026 FEB", 
@@ -48,7 +49,7 @@ const timelineData = [
       en: "Competing on home ground in Kaohsiung. We performed exceptionally well, finishing in the qualification rounds and joining the playoffs, ultimately earning the title of Finalist Alliance (1st Team Selected).",
       zh: "遠赴高雄科工館參賽。團隊在賽場上沉著應戰，在資格賽與季後賽中發揮出眾，最終獲得 Finalist Alliance（決賽聯盟第一指名 / 亞軍）。"
     },
-    videoId: "11EQmMm17pUNste46r_hwZwhQ9paujczE"
+    videoId: "1PmHvE1_bU9qKwNLn7h8HZEGlxJOkJGCA"
   },
   { 
     date: "2026 FEB — MAR", 
@@ -60,7 +61,7 @@ const timelineData = [
       en: "Traveling to compete in the China - Hong Kong Championship. Applying everything we learned, we advanced to the playoffs as a Finalist Alliance and were honored with the prestigious Inspire Award 2nd Place.",
       zh: "遠征香港參賽。吸取台灣賽經驗後，我們優化了自動程式與機械爪結構，再度闖入季後賽奪得 Finalist Alliance（決賽聯盟亞軍），並榮獲最高榮譽 Inspire Award 第二名大獎。"
     },
-    videoId: "1PmHvE1_bU9qKwNLn7h8HZEGlxJOkJGCA"
+    videoId: "1NwPk3ZJuIAYZL3AX91N6Oe4zU2dfZvtC"
   },
   { 
     date: "2026 —", 
@@ -191,8 +192,10 @@ export default function StoryPage() {
                 <span className="text-[#ff6b35] text-xs font-mono tracking-[2px] uppercase">Championship Documentary</span>
                 <h3 className="text-xl font-bold font-heading">
                   {activeVideoId === "11EQmMm17pUNste46r_hwZwhQ9paujczE" 
-                    ? (language === "en" ? "Episode 02: HOLDING IT TOGETHER (Chinese Taipei Championship)" : "Episode 02:《凝聚力量》(台灣選拔賽紀錄片)")
-                    : (language === "en" ? "Episode 03: MORE THAN A GAME (China - Hong Kong Championship)" : "Episode 03:《不止於賽》(香港錦標賽紀錄片)")
+                    ? t("media", "ep1Title")
+                    : activeVideoId === "1PmHvE1_bU9qKwNLn7h8HZEGlxJOkJGCA"
+                      ? t("media", "ep2Title")
+                      : t("media", "ep3Title")
                   }
                 </h3>
               </div>
