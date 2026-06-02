@@ -1,0 +1,8 @@
+[
+  { "date": "2026-03-04", "title": "Team Meeting", "description": "Weekly team meeting — review progress and plan for the week", "type": "meeting" },
+  { "date": "2026-03-11", "title": "Practice Session", "description": "Driver practice and mechanism testing", "type": "practice" },
+  { "date": "2026-03-18", "title": "Build Session", "description": "Robot improvements and bug fixes", "type": "build" },
+  { "date": "2026-03-25", "title": "Season Review", "description": "End-of-season review and next season planning", "type": "meeting" },
+  { "date": "2026-02-03", "title": "TW Championship", "description": "Chinese Taipei Championship event", "type": "competition" },
+  { "date": "2026-02-28", "title": "HK Championship", "description": "China — Hong Kong Championship event", "type": "competition" }
+]
