@@ -80,6 +80,12 @@
   to { opacity: 1; }
 }
 
+@keyframes bokehFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -30px) scale(1.15); }
+  100% { transform: translate(-15px, 15px) scale(0.9); }
+}
+
 @layer utilities {
   .animate-fade-in-up {
     animation: fadeInUp 0.7s ease-out both;
