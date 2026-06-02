@@ -4,62 +4,89 @@
     "title": "Game Strategy Analysis — DECODE",
     "tags": ["Design", "Strategy"],
     "category": "design",
-    "content": "## 策略分析\n\n分析 DECODE 的得分方式和策略選擇。\n\n### 得分優先順序\n1. **Autonomous** — 最佳路徑規劃\n2. **TeleOp** — Pixel 放置與得分\n3. **End Game** — 攀掛策略\n\n### 結論\n優先開發穩定的 Auto Navigation 路線。"
+    "content": {
+      "en": "## Strategy Analysis\n\nAnalyzing scoring methods and strategic choices for DECODE.\n\n### Scoring Priorities\n1. **Autonomous** — Optimizing path planning.\n2. **TeleOp** — Pixel placement and scoring.\n3. **End Game** — Hanging mechanism strategy.\n\n### Conclusion\nPrioritize developing a robust Auto Navigation route.",
+      "zh": "## 策略分析\n\n分析 DECODE 的得分方式和策略選擇。\n\n### 得分優先順序\n1. **Autonomous** — 最佳路徑規劃\n2. **TeleOp** — Pixel 放置與得分\n3. **End Game** — 攀掛策略\n\n### 結論\n優先開發穩定的 Auto Navigation 路線。"
+    }
   },
   {
     "date": "2026-02-10",
     "title": "Robot Design Review — Rev 3",
     "tags": ["Design", "CAD"],
     "category": "design",
-    "content": "## 第三版設計回顧\n\n各子系統改進說明：\n- **底盤** — Mecanum Drive 調整齒輪比\n- **取樣機構** — 改用被動對齊滾輪\n- **掛勾** — 增加承重結構"
+    "content": {
+      "en": "## Third Design Review\n\nKey sub-system improvements:\n- **Drivetrain** — Adjust gear ratios on Mecanum Drive.\n- **Intake** — Shift to passive alignment roller intake.\n- **Climber** — Increase structural load capacity.",
+      "zh": "## 第三版設計回顧\n\n各子系統改進說明：\n- **底盤** — Mecanum Drive 調整齒輪比\n- **取樣機構** — 改用被動對齊滾輪\n- **掛勾** — 增加承重結構"
+    }
   },
   {
     "date": "2025-10-15",
     "title": "Initial Concept Brainstorm",
     "tags": ["Design"],
     "category": "design",
-    "content": "## 概念腦力激盪\n\n探討了多種不同的機器人架構：\n- 方案 A：前端吸取 + 後端放置\n- 方案 B：側向吸取 + 旋轉放置\n- 方案 C：上方伸縮臂\n\n最終選擇方案 A 作為基礎設計。"
+    "content": {
+      "en": "## Concept Brainstorming\n\nExplored various robot architectures:\n- Option A: Front intake + rear placement\n- Option B: Side intake + rotating arm placement\n- Option C: Overhead telescopic arm\n\nUltimately selected Option A as the base design.",
+      "zh": "## 概念腦力激盪\n\n探討了多種不同的機器人架構：\n- 方案 A：前端吸取 + 後端放置\n- 方案 B：側向吸取 + 旋轉放置\n- 方案 C：上方伸縮臂\n\n最終選擇方案 A 作為基礎設計。"
+    }
   },
   {
     "date": "2026-01-25",
     "title": "Intake Mechanism — Iteration 3",
     "tags": ["Mechanical", "Intake"],
     "category": "mechanical",
-    "content": "## 第三代取樣機構\n\n### 改進內容\n- 吸取速度提升 **30%**\n- 加入自動對齊功能\n- 改用軟性滾輪材料\n\n### 測試數據\n- 成功率：85% → 95%\n- 平均取樣時間：2.3s → 1.6s"
+    "content": {
+      "en": "## Third Generation Intake\n\n### Improvements\n- Intake speed increased by **30%**\n- Integrated auto-alignment feature\n- Switched to soft roller compliance materials\n\n### Test Data\n- Success Rate: 85% → 95%\n- Average Intake Time: 2.3s → 1.6s",
+      "zh": "## 第三代取樣機構\n\n### 改進內容\n- 吸取速度提升 **30%**\n- 加入自動對齊功能\n- 改用軟性滾輪材料\n\n### 測試數據\n- 成功率：85% → 95%\n- 平均取樣時間：2.3s → 1.6s"
+    }
   },
   {
     "date": "2025-11-20",
     "title": "Drivetrain Selection and Build",
     "tags": ["Mechanical", "Drivetrain"],
     "category": "mechanical",
-    "content": "## 底盤系統選擇\n\n### 比較方案\n| 方案 | 優點 | 缺點 |\n|------|------|------|\n| Mecanum | 全向移動 | 推力較弱 |\n| Tank | 推力強 | 無法側移 |\n| Swerve | 最佳性能 | 複雜度高 |\n\n**最終選擇：Mecanum Drive** — 符合比賽需求的全向移動能力。"
+    "content": {
+      "en": "## Drivetrain System Selection\n\n### Compared Solutions\n| Option | Advantages | Disadvantages |\n|------|------|------|\n| Mecanum | Holonomic movement | Lower pushing force |\n| Tank | High traction | No lateral movement |\n| Swerve | Maximum performance | High complexity |\n\n**Final Selection: Mecanum Drive** — Best fit for omnidirectional requirements of the game.",
+      "zh": "## 底盤系統選擇\n\n### 比較方案\n| 方案 | 優點 | 缺點 |\n|------|------|------|\n| Mecanum | 全向移動 | 推力較弱 |\n| Tank | 推力強 | 無法側移 |\n| Swerve | 最佳性能 | 複雜度高 |\n\n**最終選擇：Mecanum Drive** — 符合比賽需求的全向移動能力。"
+    }
   },
   {
     "date": "2026-02-15",
     "title": "Autonomous Routine Development",
     "tags": ["Programming", "Auto"],
     "category": "programming",
-    "content": "## 自動階段開發\n\n使用 Road Runner 路徑規劃：\n1. 從起始位放置 preloaded element\n2. 移動到 sample zone 偵測\n3. 放入 basket\n4. 重複取放循環\n\n### 結果\n- 穩定得分：**22 points** autonomous\n- 一致性：9/10 次成功"
+    "content": {
+      "en": "## Autonomous Phase Development\n\nUtilized Road Runner for path planning:\n1. Score preloaded elements from starting position\n2. Move to sample zone detection\n3. Cycle pixels to target zones\n4. Repeat cycle\n\n### Results\n- Consistent Scoring: **22 points** in auto\n- Success Consistency: 9/10 runs successful",
+      "zh": "## 自動階段開發\n\n使用 Road Runner 路徑規劃：\n1. 從起始位放置 preloaded element\n2. 移動到 sample zone 偵測\n3. 放入 basket\n4. 重複取放循環\n\n### 結果\n- 穩定得分：**22 points** autonomous\n- 一致性：9/10 次成功"
+    }
   },
   {
     "date": "2026-01-30",
     "title": "Computer Vision — Element Detection",
     "tags": ["Programming", "Vision"],
     "category": "programming",
-    "content": "## 電腦視覺偵測\n\n### 嘗試方案\n- **OpenCV** — 色彩過濾，準確度 75%\n- **TFOD** — TensorFlow 模型，準確度 92%\n\n最終選用 TFOD 方案，但在光線不足時需要補光。"
+    "content": {
+      "en": "## Computer Vision Target Detection\n\n### Attempted Solutions\n- **OpenCV** — Color filtering, 75% accuracy\n- **TFOD** — TensorFlow Object Detection model, 92% accuracy\n\nSelected the TFOD solution, adding auxiliary active lighting for low-light conditions.",
+      "zh": "## 電腦視覺偵測\n\n### 嘗試方案\n- **OpenCV** — 色彩過濾，準確度 75%\n- **TFOD** — TensorFlow 模型，準確度 92%\n\n最終選用 TFOD 方案，但在光線不足時需要補光。"
+    }
   },
   {
     "date": "2026-02-01",
     "title": "Championship Preparation — Match Analysis",
     "tags": ["Testing", "Match"],
     "category": "testing",
-    "content": "## 台灣與香港選拔賽前分析\n\n### 比賽模擬\n- 6 場模擬資格賽\n- 平均得分：**78 points**\n- 最高得分：**112 points**\n\n### 需改進\n- Intake 在壓力下故障率較高\n- Auto 路線需要微調起始位置"
+    "content": {
+      "en": "## Selection Tournament Analysis\n\n### Match Simulations\n- 6 Qualification simulation matches\n- Average Score: **78 points**\n- High Score: **112 points**\n\n### Areas to Improve\n- Intake mechanism failure rate under stress is too high\n- Auto paths require fine-tuning for initial alignment positions",
+      "zh": "## 台灣與香港選拔賽前分析\n\n### 比賽模擬\n- 6 場模擬資格賽\n- 平均得分：**78 points**\n- 最高得分：**112 points**\n\n### 需改進\n- Intake 在壓力下故障率較高\n- Auto 路線需要微調起始位置"
+    }
   },
   {
     "date": "2026-01-15",
     "title": "Reliability Testing — 50 Match Simulation",
     "tags": ["Testing", "Reliability"],
     "category": "testing",
-    "content": "## 50 場模擬測試\n\n### 統計結果\n- 機構故障率：**4%**\n- 平均得分：**85 points**\n- 標準差：±12\n\n### 主要故障\n1. 皮帶打滑 (2次)\n2. 感測器斷線 (1次)"
+    "content": {
+      "en": "## 50-Match Stress Simulation\n\n### Statistical Results\n- Hardware Failure Rate: **4%**\n- Average Score: **85 points**\n- Standard Deviation: ±12\n\n### Main Failure Points\n1. Belt slippage (2 occurrences)\n2. Sensor disconnect (1 occurrence)",
+      "zh": "## 50 場模擬測試\n\n### 統計結果\n- 機構故障率：**4%**\n- 平均得分：**85 points**\n- 標準差：±12\n\n### 主要故障\n1. 皮帶打滑 (2次)\n2. 感測器斷線 (1次)"
+    }
   }
 ]

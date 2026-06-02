@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 import NoteCard from "./NoteCard";
 
 type Note = {
@@ -8,7 +9,7 @@ type Note = {
   title: string;
   tags: string[];
   category: string;
-  content: string;
+  content: { en: string; zh: string };
 };
 
 const categories = [
@@ -20,8 +21,13 @@ const categories = [
 
 export default function NoteTabs({ notes }: { notes: Note[] }) {
   const [activeTab, setActiveTab] = useState("design");
+  const { language } = useLanguage();
 
   const filtered = notes.filter((n) => n.category === activeTab);
+  const resolvedNotes = filtered.map((n) => ({
+    ...n,
+    content: n.content[language] || "",
+  }));
 
   return (
     <div>
@@ -45,10 +51,10 @@ export default function NoteTabs({ notes }: { notes: Note[] }) {
 
       {/* Notes list */}
       <div className="max-w-3xl mx-auto">
-        {filtered.length === 0 ? (
+        {resolvedNotes.length === 0 ? (
           <p className="text-center text-gray-500">No notes in this category yet.</p>
         ) : (
-          filtered.map((note, i) => <NoteCard key={i} note={note} />)
+          resolvedNotes.map((note, i) => <NoteCard key={i} note={note} />)
         )}
       </div>
     </div>

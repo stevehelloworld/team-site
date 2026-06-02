@@ -2,37 +2,55 @@
     {
         "name": "Member A",
         "role": "Team Captain",
-        "bio": "負責團隊管理和策略規劃",
+        "bio": {
+            "en": "Responsible for overall team coordination, management, and match strategy planning.",
+            "zh": "負責團隊管理和策略規劃"
+        },
         "photo": ""
     },
     {
         "name": "Member B",
         "role": "Lead Programmer",
-        "bio": "負責機器人自動和遙控程式開發",
+        "bio": {
+            "en": "Responsible for autonomous algorithms, sensor integration, and driver-controlled software.",
+            "zh": "負責機器人自動和遙控程式開發"
+        },
         "photo": ""
     },
     {
         "name": "Member C",
         "role": "Mechanical Lead",
-        "bio": "負責機器人機構設計和製作",
+        "bio": {
+            "en": "Responsible for robot chassis assembly, sub-systems mechanical prototyping, and fabrication.",
+            "zh": "負責機器人機構設計和製作"
+        },
         "photo": ""
     },
     {
         "name": "Member D",
         "role": "Outreach Lead",
-        "bio": "負責團隊對外推廣和社群經營",
+        "bio": {
+            "en": "Responsible for community outreach, STEM advocacy, social media management, and sponsor relations.",
+            "zh": "負責團隊對外推廣和社群經營"
+        },
         "photo": ""
     },
     {
         "name": "Member E",
         "role": "CAD Designer",
-        "bio": "負責機器人 3D 建模和設計",
+        "bio": {
+            "en": "Responsible for 3D modeling, mechanical fit testing, and blueprints generation using CAD software.",
+            "zh": "負責機器人 3D 建模和設計"
+        },
         "photo": ""
     },
     {
         "name": "Member F",
         "role": "Driver",
-        "bio": "負責遙控操作和賽場策略",
+        "bio": {
+            "en": "Responsible for operating the robot during driver-controlled matches and coordinating on-field tactics.",
+            "zh": "負責遙控操作和賽場策略"
+        },
         "photo": ""
     }
 ]

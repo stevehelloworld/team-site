@@ -1,3 +1,7 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
+
 type TimelineItemProps = {
   date: string;
   title: string;
@@ -18,6 +22,7 @@ export default function TimelineItem({
   onPlayVideo,
 }: TimelineItemProps) {
   const isEven = index % 2 === 0;
+  const { language } = useLanguage();
 
   return (
     <div className={`relative flex flex-row gap-6 pb-10 md:pb-14 last:pb-0 group w-full ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}>
@@ -51,7 +56,7 @@ export default function TimelineItem({
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M8 5V19L19 12L8 5Z" />
             </svg>
-            觀看紀錄片
+            {language === "en" ? "Watch Video" : "觀看紀錄片"}
           </button>
         )}
       </div>

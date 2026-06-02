@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 import RobotCard from "./RobotCard";
 
 type Robot = {
@@ -9,11 +10,18 @@ type Robot = {
   specs: Record<string, string | undefined>;
   features: string[];
   photo: string;
-  description: string;
+  description: { en: string; zh: string };
 };
 
 export default function RobotTabs({ robots }: { robots: Robot[] }) {
   const [active, setActive] = useState(0);
+  const { language } = useLanguage();
+
+  const activeRobot = robots[active];
+  const resolvedRobot = {
+    ...activeRobot,
+    description: activeRobot.description[language] || "",
+  };
 
   return (
     <div>
@@ -37,7 +45,7 @@ export default function RobotTabs({ robots }: { robots: Robot[] }) {
 
       {/* Active robot */}
       <div className="w-full">
-        <RobotCard {...robots[active]} />
+        <RobotCard {...resolvedRobot} />
       </div>
     </div>
   );

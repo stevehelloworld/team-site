@@ -186,7 +186,7 @@ export default function MarsBackground() {
             src="/images/mars.png"
             alt="Mars"
             fill
-            className="object-contain mix-blend-screen"
+            className="object-contain"
             style={{
               filter: `brightness(0.75) contrast(1.1) blur(${marsBlur}px)`,
               animation: "marsFloat 24s ease-in-out infinite",

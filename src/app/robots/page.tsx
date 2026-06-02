@@ -1,18 +1,21 @@
-import type { Metadata } from "next";
+"use client";
+
 import RobotTabs from "@/components/RobotTabs";
 import robotsData from "@/data/robots.json";
-
-export const metadata: Metadata = {
-  title: "Our Robots",
-  description: "Explore the robots engineered and programmed by FTC Team #32760 VIS Mars, detailing mechanisms, CAD designs, and software.",
-};
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function RobotsPage() {
+  const { t } = useLanguage();
+
   return (
     <main className="pt-[72px] w-full">
       <div className="text-center py-16 px-6" style={{ background: "radial-gradient(ellipse at 50% 50%, #1a0e08, #0d1117)" }}>
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-heading)" }}>Our Robots</h1>
-        <p className="text-gray-400 font-light text-lg">Machines built with passion and precision</p>
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-heading)" }}>
+          {t("robots", "title")}
+        </h1>
+        <p className="text-gray-400 font-light text-lg">
+          {t("robots", "subTitle")}
+        </p>
       </div>
 
       <section className="py-16">

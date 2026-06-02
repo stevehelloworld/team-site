@@ -14,7 +14,10 @@
             "Hanging mechanism"
         ],
         "photo": "",
-        "description": "VIS Mars 的第一台 FTC 競賽機器人。為 DECODE 賽季設計，具備自動導航、像素辨識與掛鉤攀爬功能。經過多次迭代改進，在台灣選拔賽與香港錦標賽中表現出色。"
+        "description": {
+            "en": "The first competitive FTC robot built by VIS Mars. Engineered for the DECODE season, it features autonomous navigation, computer vision pixel alignment, and a secure hanging mechanism. Through multiple iterations, it delivered outstanding performances at the Taiwan Selection and Hong Kong Championship.",
+            "zh": "VIS Mars 的第一台 FTC 競賽機器人。為 DECODE 賽季設計，具備自動導航、像素辨識與掛鉤攀爬功能。經過多次迭代改進，在台灣選拔賽與香港錦標賽中表現出色。"
+        }
     },
     {
         "name": "Prototype Bot",
@@ -29,6 +32,9 @@
             "Mechanism Testing"
         ],
         "photo": "",
-        "description": "團隊的第一台練習機器人，用於學習基本的機器人控制和簡單機構測試。這台機器人幫助團隊成員熟悉 FTC 系統和程式開發流程。"
+        "description": {
+            "en": "The team's first prototype robot, built during the pre-season to learn basic mechanical principles and test coding workflows. This robot helped the team establish solid foundations in FTC hardware systems and Java programming.",
+            "zh": "團隊的第一台練習機器人，用於學習基本的機器人控制和簡單機構測試。這台機器人幫助團隊成員熟悉 FTC 系統和程式開發流程。"
+        }
     }
 ]

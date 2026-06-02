@@ -22,12 +22,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const savedLang = localStorage.getItem("lang") as Language;
     if (savedLang === "en" || savedLang === "zh") {
       setLanguageState(savedLang);
-    } else {
-      // Auto-detect browser language
-      const browserLang = navigator.language.toLowerCase();
-      if (browserLang.includes("zh")) {
-        setLanguageState("zh");
-      }
     }
     setMounted(true);
   }, []);

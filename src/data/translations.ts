@@ -162,5 +162,62 @@ export const translations: TranslationsDict = {
     ep2Duration: { en: "Tournament Record", zh: "賽事紀錄" },
     ep3Category: { en: "Championship", zh: "錦標賽" },
     ep3Duration: { en: "Overseas Tour", zh: "海外遠征" }
+  },
+  robots: {
+    title: { en: "Our Robots", zh: "我們的機器人" },
+    subTitle: { en: "Machines built with passion and precision", zh: "以熱忱與精準打造的機器人" }
+  },
+  members: {
+    title: { en: "Team Members", zh: "隊伍成員" },
+    subTitle: { en: "The people behind VIS Mars", zh: "VIS Mars 幕後的合作團隊" },
+    mentorsTitle: { en: "Mentors", zh: "指導老師與技術顧問" },
+    mentorsSub: { en: "The experienced mentors who guide our team", zh: "引導我們前進與技術開發的專業師資" },
+    coachBio: {
+      en: "Head Coach, specializing in project management and engineering design workflows. Guides the team in building strong development discipline and systemic documentation.",
+      zh: "指導老師，專長於專案管理與工程設計流程控管。引導團隊建立良好的開發紀律與系統性記錄。"
+    },
+    mentorBio: {
+      en: "Technical Mentor, specializing in embedded control systems and CAD mechanism verification. Guides students in software architecture design and mechanical manufacturing processes.",
+      zh: "技術顧問，專長於嵌入式控制系統與 CAD 機構開發驗證。指導學生進行程式架構設計與硬體加工製程。"
+    }
+  },
+  notes: {
+    title: { en: "Engineering Notes", zh: "工程筆記" },
+    subTitle: { en: "Our engineering process and design documentation", zh: "我們的工程開發歷程與設計文檔" }
+  },
+  calendar: {
+    title: { en: "Calendar", zh: "行事曆" },
+    subTitle: { en: "Team schedule and upcoming events", zh: "隊伍時程表與近期活動" },
+    upcomingEvents: { en: "Upcoming Events", zh: "近期活動" },
+    teamStatus: { en: "Team Status", zh: "團隊進度與狀態" }
+  },
+  resources: {
+    badge: { en: "Open Source & Sharing", zh: "開源與共享" },
+    title: { en: "Open Source Resources & Brand Guidelines", zh: "開源資源與品牌手冊" },
+    subTitle: { en: "We believe in the FIRST philosophy of sharing and cooperation, making our hardware, software, portfolio, and branding assets open to everyone.", zh: "我們秉持 FIRST 共享共榮的精神，公開我們的軟硬體開發成果、參賽設計文檔與官方視覺資產。" },
+    techTitle: { en: "Engineering & Technical Resources", zh: "工程與技術資源" },
+    repoTitle: { en: "Robot Control Source Code", zh: "機器人控制源碼" },
+    repoDesc: { en: "Our complete FTC robot codebase, including OpenCV vision detection during autonomous phase, PID loop motion controls, and route planning algorithms.", zh: "我們完整的 FTC 機器人控制系統程式碼，包含自主控制階段的 OpenCV 視覺偵測、PID 閉環路運動控制算法以及自動路徑規劃。" },
+    repoLink: { en: "Go to GitHub Repository →", zh: "前往 GitHub 倉庫 →" },
+    cadTitle: { en: "Robot 3D Model (Onshape)", zh: "機器人 3D 模型 (Onshape)" },
+    cadDesc: { en: "Access CAD files for our robots, containing drivetrain layout, intake mechanism models, gear ratios calculations, and CNC plate specs.", zh: "公開歷代機器人的 CAD 工程檔。包含底盤輪系配置、進料懸掛機構、齒輪傳動比計算以及 CNC 鋁合金減重板零件規格。" },
+    cadLink: { en: "Browse 3D Model Online →", zh: "線上瀏覽 3D 模型 →" },
+    docTitle: { en: "Engineering Portfolio", zh: "工程設計筆記 (Portfolio)" },
+    docDesc: { en: "Our engineering portfolio compiled to FTC standards, recording the complete journey from design brainstorming to match strategy analysis.", zh: "符合 FTC 評審規範的工程筆記（Engineering Portfolio），詳細記錄了從設計概念腦力激盪、機構迭代到賽場策略分析的完整脈絡。" },
+    docLink: { en: "Download PDF Portfolio →", zh: "下載 PDF 文件 →" },
+    brandTitle: { en: "Brand Visuals & Guidelines (Media Kit)", zh: "隊伍視覺與品牌規範 (Media Kit)" },
+    brandSub: { en: "To maintain the consistent and professional image of FTC Team #32760 VIS Mars, please adhere to these color and typography rules:", zh: "為維持 VIS Mars #32760 隊伍形象的統一性與專業感，請依循以下標準色彩與字體規範：" },
+    brandGuidelines: { en: "Visual Guidelines", zh: "品牌視覺規範" },
+    standardColors: { en: "Standard Colors", zh: "標準色彩" },
+    standardTypography: { en: "Standard Typography", zh: "標準字體" },
+    bodyFontName: { en: "Roboto / Sans-serif", zh: "Roboto / 繁體中文標準黑體" },
+    downloadsTitle: { en: "Official Assets Download", zh: "官方素材下載" },
+    downloadsDesc: { en: "Download official branding elements for media, outreach, and sponsor materials. Includes vector SVGs, transparent PNGs, and color variations.", zh: "提供給合作夥伴、贊助商及宣傳推廣活動使用的官方標誌資產。包內含有去背 PNG、標準向量 SVG 以及不同背景色適用的色盤版本。" },
+    logoVector: { en: "Official Vector Logo (SVG)", zh: "官方徽章 Logo (向量版)" },
+    logoVectorDesc: { en: "Vector SVG file for high-resolution print and large scale prints", zh: "向量 SVG 格式 • 適用於印刷與放大設計" },
+    logoPng: { en: "Official Logo (Transparent PNG)", zh: "官方徽章 Logo (透明背景)" },
+    logoPngDesc: { en: "Transparent PNG file for presentation slides and flyers", zh: "去背 PNG 格式 • 適用於數位簡報與海報" },
+    slidesTemplate: { en: "Presentation Slides Template (PPT)", zh: "簡報投影片模板 (PPT)" },
+    slidesTemplateDesc: { en: "PowerPoint template with unified style guidelines", zh: "PowerPoint 格式 • 統一色調與排版架構" }
   }
 };
