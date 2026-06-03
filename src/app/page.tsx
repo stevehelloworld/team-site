@@ -85,7 +85,7 @@ export default function Home() {
                 className="text-[2.5rem] font-extrabold text-[#ff6b35] block"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                2024
+                2025
               </span>
               <span className="text-[0.8rem] text-gray-400 uppercase tracking-[2px] font-medium">
                 {t("home", "statFounded")}
